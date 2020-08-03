@@ -110,5 +110,42 @@ classmate.append(anotherCollection);
 print(classmate)
 print(classmate[4][1])
 
-# 12.元组tuple
+# 12.元组tuple:和list相似但是tuple一旦初始化就不能修改
 print('\n--------12------------')
+company = ("lf",'wx')
+print(company)
+print(company[0])
+# 12.1.只有一个元素的tuple可以添加一个逗号来消除数学计算意义上的歧义
+company=(1)
+print(company)
+company=(1,)
+print(company)
+# 12.2.其实tuple的不变指的是指向不变，类似于指向这个元素的指针不变，但是该元素是可以改变的
+company = ('x','y',['z','u'])
+print(company)
+company[2][1]='s'
+print(company)
+
+print('\n--------13------------')
+# 13.条件判断
+age = 28
+if age>18:
+    print('adult')
+
+if age >18 :
+    print('adult')
+else:
+    print('teenage')
+
+age = 3
+if age > 18:
+    print('adult')
+elif age>6:
+    print('teenage')
+else :
+    print('kid')
+# 13.1.if简写：只要x是非零数值、非空字符串、非空list等，就判断为True，否则为False，如下
+x = 1
+if x:
+    print(True)
+
