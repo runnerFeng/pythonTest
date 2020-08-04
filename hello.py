@@ -214,4 +214,69 @@ while n < 10:
         continue
     print(n)
 
+# print('\n--------17------------')
+# 17.dict:字典,需要牢记的是dict的key必须是不可变对象，如字符串，整数等
+d = {'jinx':98,'lux':97}
+print(d['jinx'])
 
+d['leona']=99
+print(d)
+
+# 17.1.判断字典中是否存在某个key的两种方法:in语句，get()方法
+print('jinx' in d)
+print(d.get('jin'))
+# 17.2.删除一个key:pop()
+d.pop('jinx')
+print(d)
+
+# 18.set
+# print('\n--------18------------')
+s = set([0,2,2,3])
+print(s)
+s.add(4)
+print(s)
+s.discard(5)
+print(s)
+
+# 18.1.set的交集，并集
+s1= set([1,2,5])
+t = s & s1
+print(t)
+print(s | s1)
+
+# print('\n--------19------------')
+# 19.函数:查询函数用法用help()函数，函数名其实是一个指向函数对象的引用，所以可以把函数名赋值给一个变量
+# help(abs)
+b = abs
+print(b(-1))
+# 19.1.定义函数：定义一个求绝对值的函数
+# def my_abs (x):
+#     if x>0:
+#         return x
+#     else:
+#         return -x
+
+# print(my_abs(-2))
+
+# 19.2.引入定义好的函数
+from abstest import my_abs
+print(my_abs(-2))
+
+# 19.2.定义一个空函数:可以使用pass语句，pass语句实际什么都不做，只是一个占位符
+def todo_method():
+    pass
+print(todo_method())
+
+def my_method(x):
+    if x>2:
+        pass
+    else:
+        print('param value less than 2')
+my_method(1)
+
+# 19.3.自定义函数的参数检查:isinstance()
+# my_abs('1')
+
+# 19.4.
+import math
+print(math.sin(30))
