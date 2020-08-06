@@ -277,6 +277,42 @@ my_method(1)
 # 19.3.自定义函数的参数检查:isinstance()
 # my_abs('1')
 
-# 19.4.
+# 19.4.返回多个值：其实返回的是一个tuple
 import math
-print(math.sin(30))
+def move(x,y,step,angel=0):
+    nx = x+step*math.sin(angel)
+    ny = x- step*math.cos(angel)
+    return nx,ny
+x,y = move(100,100,60,math.pi / 6)
+print(x,y)
+
+# print('\n--------20------------')
+# 20.函数参数
+# 20.1.位置参数：计算x^2
+def power(x):
+    return x * x
+print(power(3))
+
+# 20.2.计算x^n
+def power(x,n):
+    s = x
+    while n > 0:
+        n = n-1
+        s = s *  x
+        return s 
+
+print(power(3,3))
+
+# 20.3.默认参数:如果不传第二个参数则默认为2，即计算平方值，需要注意的是设置默认参数时必须把必填参数放在前面，默认参数放在后面
+def power(x,n=2):
+    s = x
+    while n > 0:
+        n = n - 1
+        s = s * x
+        return s
+
+print(power(4))
+
+# 20.3.可变参数
+
+        
