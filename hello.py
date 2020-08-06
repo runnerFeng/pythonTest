@@ -299,7 +299,7 @@ def power(x,n):
     while n > 0:
         n = n-1
         s = s *  x
-        return s 
+    return s 
 
 print(power(3,3))
 
@@ -309,10 +309,65 @@ def power(x,n=2):
     while n > 0:
         n = n - 1
         s = s * x
-        return s
+    return s
 
 print(power(4))
 
-# 20.3.可变参数
+# 20.4.可变参数:计算a^2 + b^2 + c^2...
+def cal(*numbers):
+    sum = 0;
+    for x in numbers:
+        sum = sum + x * x
+    return sum
+print(cal(1,2,3))
 
-        
+# 20.5.如果想要将list或者tuple传入可变参数可以在list或者tuple前加个*
+numbers = [1,2,3]
+print(cal(*numbers))        
+
+# 20.6.关键字参数：在参数前加**,关键字参数在函数内部组装为一个dict
+def person(name,age,**kv):
+    print('name:', name,'age:', age, 'other:', kv)
+value1 = person('jinx',29)
+print(value1)
+print(person('lux',28,career='teacher'))
+extra = {'hobby':'swimming','weight':'75kg'}
+print(person('leona',27,**extra))
+
+# 20.7.命名关键字参数(参数名必须是给定但值)：用*分割固定参数个关键字参数，如果已经有一个可变参数，则后面的命名关键字参数无需*分割
+def person(name,age,*,gender,job):
+    print(name,age,gender,job)
+# print(person('jin',26,gender = 'male',work='coder'))
+print(person('jin',26,gender = 'male',job='coder'))
+
+# 下面写法可以不写命名参数名称
+def person(name,age,*arg,gender,job):
+    print(name,age,arg,gender,job)
+print('jinx',24,'ceshi','male','coder')
+
+# 给命名参数给定初始值后调用函数可以不给该参数赋值
+def person(name,age,*,gender='male',job):
+    print(name,age,gender,job)
+print(person('aug',24,job='coder'))    
+
+# 20.8.参数组合：参数定义的顺序必须是：必选参数、默认参数、可变参数、命名关键字参数和关键字参数
+def f1(a,b,c=0,*arg,**kw):
+    print('a=',a,'b=',b,'c=',c,'arg=',arg,'kw=',kw)
+print(f1(1,2))
+print(f1(1,2,3,4))
+print(f1(1,2,3,4,'5','x',name='jinx'))
+
+def f2(a,b,c=0,*,d,**kw):
+    print('a=',a,'b=',b,'c=',c,'d=',d,'kw=',kw)
+print(f2(1,2,5,d='xx',name='jinx'))    
+
+# 神奇之处
+a = [1,2]
+b = {'name':'jinx','age':23,'d':10}
+print(f1(*a,**b))
+# 此处调用f2函数所以b中必须要有d参数，否则会报错
+print(f2(*a,**b))
+
+# print('\n--------21------------')
+# 21.递归函数
+
