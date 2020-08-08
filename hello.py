@@ -207,48 +207,48 @@
 
 # print('\n--------16------------')
 # 16.continue:打印1-10的奇数
-n = 0
-while n < 10:
-    n += 1
-    if n % 2 == 0:
-        continue
-    print(n)
+# n = 0
+# while n < 10:
+#     n += 1
+#     if n % 2 == 0:
+#         continue
+#     print(n)
 
 # print('\n--------17------------')
 # 17.dict:字典,需要牢记的是dict的key必须是不可变对象，如字符串，整数等
-d = {'jinx': 98, 'lux': 97}
-print(d['jinx'])
+# d = {'jinx': 98, 'lux': 97}
+# print(d['jinx'])
 
-d['leona'] = 99
-print(d)
+# d['leona'] = 99
+# print(d)
 
 # 17.1.判断字典中是否存在某个key的两种方法:in语句，get()方法
-print('jinx' in d)
-print(d.get('jin'))
+# print('jinx' in d)
+# print(d.get('jin'))
 # 17.2.删除一个key:pop()
-d.pop('jinx')
-print(d)
+# d.pop('jinx')
+# print(d)
 
 # 18.set
 # print('\n--------18------------')
-s = set([0, 2, 2, 3])
-print(s)
-s.add(4)
-print(s)
-s.discard(5)
-print(s)
+# s = set([0, 2, 2, 3])
+# print(s)
+# s.add(4)
+# print(s)
+# s.discard(5)
+# print(s)
 
 # 18.1.set的交集，并集
-s1 = set([1, 2, 5])
-t = s & s1
-print(t)
-print(s | s1)
+# s1 = set([1, 2, 5])
+# t = s & s1
+# print(t)
+# print(s | s1)
 
 # print('\n--------19------------')
 # 19.函数:查询函数用法用help()函数，函数名其实是一个指向函数对象的引用，所以可以把函数名赋值给一个变量
 # help(abs)
-b = abs
-print(b(-1))
+# b = abs
+# print(b(-1))
 # 19.1.定义函数：定义一个求绝对值的函数
 # def my_abs (x):
 #     if x>0:
@@ -259,153 +259,153 @@ print(b(-1))
 # print(my_abs(-2))
 
 # 19.2.引入定义好的函数
-from abstest import my_abs
+# from abstest import my_abs
 
-print(my_abs(-2))
+# print(my_abs(-2))
 
 
 # 19.2.定义一个空函数:可以使用pass语句，pass语句实际什么都不做，只是一个占位符
-def todo_method():
-    pass
+# def todo_method():
+#     pass
 
 
-print(todo_method())
+# print(todo_method())
 
 
-def my_method(x):
-    if x > 2:
-        pass
-    else:
-        print('param value less than 2')
+# def my_method(x):
+#     if x > 2:
+#         pass
+#     else:
+#         print('param value less than 2')
 
 
-my_method(1)
+# my_method(1)
 
 # 19.3.自定义函数的参数检查:isinstance()
 # my_abs('1')
 
 # 19.4.返回多个值：其实返回的是一个tuple
-import math
+# import math
 
 
-def move(x, y, step, angel=0):
-    nx = x + step * math.sin(angel)
-    ny = x - step * math.cos(angel)
-    return nx, ny
+# def move(x, y, step, angel=0):
+#     nx = x + step * math.sin(angel)
+#     ny = x - step * math.cos(angel)
+#     return nx, ny
 
 
-x, y = move(100, 100, 60, math.pi / 6)
-print(x, y)
+# x, y = move(100, 100, 60, math.pi / 6)
+# print(x, y)
 
 
 # print('\n--------20------------')
 # 20.函数参数
 # 20.1.位置参数：计算x^2
-def power(x):
-    return x * x
+# def power(x):
+#     return x * x
 
 
-print(power(3))
+# print(power(3))
 
 
 # 20.2.计算x^n
-def power(x, n):
-    s = x
-    while n > 0:
-        n = n - 1
-        s = s * x
-    return s
+# def power(x, n):
+#     s = x
+#     while n > 0:
+#         n = n - 1
+#         s = s * x
+#     return s
 
 
-print(power(3, 3))
+# print(power(3, 3))
 
 
 # 20.3.默认参数:如果不传第二个参数则默认为2，即计算平方值，需要注意的是设置默认参数时必须把必填参数放在前面，默认参数放在后面
-def power(x, n=2):
-    s = x
-    while n > 0:
-        n = n - 1
-        s = s * x
-    return s
+# def power(x, n=2):
+#     s = x
+#     while n > 0:
+#         n = n - 1
+#         s = s * x
+#     return s
 
 
-print(power(4))
+# print(power(4))
 
 
 # 20.4.可变参数:计算a^2 + b^2 + c^2...
-def cal(*numbers):
-    sum = 0;
-    for x in numbers:
-        sum = sum + x * x
-    return sum
+# def cal(*numbers):
+#     sum = 0;
+#     for x in numbers:
+#         sum = sum + x * x
+#     return sum
 
 
-print(cal(1, 2, 3))
+# print(cal(1, 2, 3))
 
 # 20.5.如果想要将list或者tuple传入可变参数可以在list或者tuple前加个*
-numbers = [1, 2, 3]
-print(cal(*numbers))
+# numbers = [1, 2, 3]
+# print(cal(*numbers))
 
 
 # 20.6.关键字参数：在参数前加**,关键字参数在函数内部组装为一个dict
-def person(name, age, **kv):
-    print('name:', name, 'age:', age, 'other:', kv)
+# def person(name, age, **kv):
+#     print('name:', name, 'age:', age, 'other:', kv)
 
 
-value1 = person('jinx', 29)
-print(value1)
-print(person('lux', 28, career='teacher'))
-extra = {'hobby': 'swimming', 'weight': '75kg'}
-print(person('leona', 27, **extra))
+# value1 = person('jinx', 29)
+# print(value1)
+# print(person('lux', 28, career='teacher'))
+# extra = {'hobby': 'swimming', 'weight': '75kg'}
+# print(person('leona', 27, **extra))
 
 
 # 20.7.命名关键字参数(参数名必须是给定但值)：用*分割固定参数个关键字参数，如果已经有一个可变参数，则后面的命名关键字参数无需*分割
-def person(name, age, *, gender, job):
-    print(name, age, gender, job)
+# def person(name, age, *, gender, job):
+#     print(name, age, gender, job)
 
 
 # print(person('jin',26,gender = 'male',work='coder'))
-print(person('jin', 26, gender='male', job='coder'))
+# print(person('jin', 26, gender='male', job='coder'))
 
 
 # 下面写法可以不写命名参数名称
-def person(name, age, *arg, gender, job):
-    print(name, age, arg, gender, job)
+# def person(name, age, *arg, gender, job):
+#     print(name, age, arg, gender, job)
 
 
-print('jinx', 24, 'ceshi', 'male', 'coder')
+# print('jinx', 24, 'ceshi', 'male', 'coder')
 
 
 # 给命名参数给定初始值后调用函数可以不给该参数赋值
-def person(name, age, *, gender='male', job):
-    print(name, age, gender, job)
+# def person(name, age, *, gender='male', job):
+#     print(name, age, gender, job)
 
 
-print(person('aug', 24, job='coder'))
+# print(person('aug', 24, job='coder'))
 
 
 # 20.8.参数组合：参数定义的顺序必须是：必选参数、默认参数、可变参数、命名关键字参数和关键字参数
-def f1(a, b, c=0, *arg, **kw):
-    print('a=', a, 'b=', b, 'c=', c, 'arg=', arg, 'kw=', kw)
+# def f1(a, b, c=0, *arg, **kw):
+#     print('a=', a, 'b=', b, 'c=', c, 'arg=', arg, 'kw=', kw)
 
 
-print(f1(1, 2))
-print(f1(1, 2, 3, 4))
-print(f1(1, 2, 3, 4, '5', 'x', name='jinx'))
+# print(f1(1, 2))
+# print(f1(1, 2, 3, 4))
+# print(f1(1, 2, 3, 4, '5', 'x', name='jinx'))
 
 
-def f2(a, b, c=0, *, d, **kw):
-    print('a=', a, 'b=', b, 'c=', c, 'd=', d, 'kw=', kw)
+# def f2(a, b, c=0, *, d, **kw):
+#     print('a=', a, 'b=', b, 'c=', c, 'd=', d, 'kw=', kw)
 
 
-print(f2(1, 2, 5, d='xx', name='jinx'))
+# print(f2(1, 2, 5, d='xx', name='jinx'))
 
 # 神奇之处
-a = [1, 2]
-b = {'name': 'jinx', 'age': 23, 'd': 10}
-print(f1(*a, **b))
+# a = [1, 2]
+# b = {'name': 'jinx', 'age': 23, 'd': 10}
+# print(f1(*a, **b))
 # 此处调用f2函数所以b中必须要有d参数，否则会报错
-print(f2(*a, **b))
+# print(f2(*a, **b))
 
 
 # print('\n--------21------------')
@@ -416,11 +416,13 @@ print(f2(*a, **b))
 #        return n * fact(n-1)
 # print(fact(3))
 
-def fact(n):
-    return fact_inte(n,1)
+# def fact(n):
+#     return fact_inte(n,1)
 
-def fact_inte(n,x):
-    if n == 1:
-        return 1
-    return fact_inte(n - 1,n * x)   
-print(fact(10)) 
+# def fact_inte(n,x):
+#     if n == 1:
+#         return 1
+#     return fact_inte(n - 1,n * x)   
+# print(fact(10)) 
+y = 123
+print(y)
